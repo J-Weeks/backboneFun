@@ -1,16 +1,16 @@
-/*global BackboneFun, $*/
-'use strict'
+'use strict';
 
 var App = (function(app) {
-  app.init = function() {
+  app.initialize = function() {
     var router = new Router();
     Backbone.history.start();
   };
 
-  var Router = Back.Router.extend({
-    routes:{
-        '':'home',
-        'about': 'about'
+
+  var Router = Backbone.Router.extend({
+    routes: {
+      '': 'home', // http://localhost:9000/
+      'about': 'about', // http://localhost:9000/#/about
     },
     home: home,
     about: about
@@ -19,8 +19,6 @@ var App = (function(app) {
   return app;
 })(App || {});
 
-
-
-$(document).ready(function () {
-    App.init();
+$(document).ready(function(){
+  App.initialize();
 });
